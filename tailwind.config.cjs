@@ -21,10 +21,21 @@ module.exports = {
       container: {
         center: true,
         padding: {
-          DEFAULT: "20px",
-          lg: "80px",
+          DEFAULT: "2rem",
+          sm: "2rem",
+          md: "4rem",
+          lg: "6rem",
+          xl: "8rem",
+          "2xl": "8rem",
         },
       },
+      maxWidth: {
+        'centered': '1400px',
+      },
+      spacing: {
+        'section-x': 'clamp(2rem, 5vw, 8rem)',
+        'section-y': 'clamp(4rem, 8vw, 10rem)',
+      }
     },
   },
   plugins: [],

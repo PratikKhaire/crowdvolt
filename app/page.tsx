@@ -7,6 +7,7 @@ import Message from './section/Message'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all'
+import { EventsExplorer } from './section/EventsExplorer'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -28,6 +29,7 @@ const Page = () => {
           <Hero/>
         </div>  
         <Message/>
+        <EventsExplorer />
       </div>
      </div>
     </>

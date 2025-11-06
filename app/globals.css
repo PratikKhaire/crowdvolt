@@ -3,29 +3,49 @@
 @tailwind utilities;
 
 @layer components {
+    /* Centered Layout System */
+    .section-wrapper {
+        @apply relative overflow-hidden;
+    }
+    
+    .section-container {
+        @apply max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32;
+    }
+    
+    .section-padding-y {
+        @apply py-20 md:py-32 lg:py-40;
+    }
+
+    .section-heading-center {
+        @apply text-center mb-16 md:mb-20 lg:mb-24;
+    }
+
+    /* Existing Button Styles */
     .btn {
-        @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center  tracking-tight
+        @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight;
     }
     .btn-primary {
-        @apply bg-black text-white 
+        @apply bg-black text-white hover:bg-black/90 transition-colors;
     }
 
     .btn-text {
-        @apply bg-transparent text-black
+        @apply bg-transparent text-black;
     }
+    
     .tag{
-        @apply text-sm border border-[#222]/10 inline-flex px-3 py-1 rounded-lg tracking-tight
+        @apply text-sm border border-[#222]/10 inline-flex px-3 py-1 rounded-lg tracking-tight;
     }
 
     .heading{
-        @apply text-3xl lg:text-7xl  font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6
+        @apply text-3xl lg:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6;
     }
 
     .sub-heading{
-        @apply text-xl text-[#010D3E] tracking-tight mt-6
+        @apply text-xl text-[#010D3E] tracking-tight mt-6;
     }
+    
     .card{
-        @apply p-10 rounded-3xl border border-[#F1F1F1] shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full
+        @apply p-10 rounded-3xl border border-[#F1F1F1] shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
     }
 
     .logo-ticker-image{
@@ -81,14 +101,6 @@ radial-gradient(at 100% 45%, hsla(204,100%,85%,1) 0px, transparent 50%);
         @apply h-full w-full flex md:flex-row flex-col items-center 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap;
     }
 
-    .flavors .drinks {
-        @apply absolute left-1/2 -translate-x-1/2 bottom-0 md:h-full h-80;
-    }
-
-    .flavors .elements {
-        @apply absolute md:top-0 md:bottom-auto bottom-10 w-full;
-    }
-
     .flavors h1 {
         @apply absolute md:bottom-10 md:left-10 bottom-5 left-5 text-[#F5F5DC] md:text-6xl text-3xl font-semibold uppercase tracking-tighter;
     }
@@ -107,5 +119,13 @@ radial-gradient(at 100% 45%, hsla(204,100%,85%,1) 0px, transparent 50%);
 
     .col-center {
         @apply flex flex-col items-center;
+    }
+
+    .drinks {
+        @apply absolute left-1/2 -translate-x-1/2 bottom-0 md:h-full h-80 w-full object-contain z-10;
+    }
+
+    .elements {
+        @apply absolute md:top-0 md:bottom-auto bottom-10 left-0 right-0 h-3/4 w-full object-contain object-top z-20;
     }
 }

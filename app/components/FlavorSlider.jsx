@@ -2,7 +2,7 @@
 
 "use client"
 import { useGSAP } from "@gsap/react";
-import { flavorlists } from "../constants/";
+import { flavorlists } from "../constants";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -72,17 +72,17 @@ const FlavorSlider = () => {
         {flavorlists.map((flavor) => (
           <div
             key={flavor.name}
-            className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}
+            className={`relative lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none overflow-hidden ${flavor.rotation || ''}`}
           >
             <img
               src={`/images/${flavor.color}-bg.svg`}
               alt=""
-              className="absolute bottom-0"
+              className="absolute inset-0 w-full h-full object-contain object-bottom z-0"
             />
 
             <img
               src={`/images/${flavor.color}-drink.webp`}
-              alt=""
+              alt={`${flavor.name} drink`}
               className="drinks"
             />
 
@@ -92,7 +92,9 @@ const FlavorSlider = () => {
               className="elements"
             />
 
-            <h1>{flavor.name}</h1>
+            <h1 className="absolute md:bottom-10 md:left-10 bottom-5 left-5 text-[#F5F5DC] md:text-6xl text-3xl font-semibold uppercase tracking-tighter z-30">
+              {flavor.name}
+            </h1>
           </div>
         ))}
       </div>
