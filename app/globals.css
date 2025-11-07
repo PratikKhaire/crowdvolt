@@ -26,7 +26,7 @@
     }
     
     .section-container {
-        @apply max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32;
+        @apply max-w-[1400px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32;
     }
     
     .section-padding-y {
@@ -66,7 +66,7 @@
     }
 
     .logo-ticker-image{
-        @apply w-full h-full max-w-[500px] max-h-[500px] object-contain rounded-3xl;
+        @apply w-full h-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] max-h-[180px] sm:max-h-[200px] md:max-h-[500px] object-contain rounded-2xl sm:rounded-3xl;
     }
 }
 
@@ -98,6 +98,7 @@ radial-gradient(at 100% 45%, hsla(204,100%,85%,1) 0px, transparent 50%);
         @apply min-h-dvh bg-[#F5F5DC];
         background-color: #F5F5DC !important;
         position: relative;
+        overflow-x: hidden;
     }
     
     .message-section::before {
@@ -128,8 +129,22 @@ radial-gradient(at 100% 45%, hsla(204,100%,85%,1) 0px, transparent 50%);
         @apply lg:h-dvh min-h-dvh md:min-h-fit w-full mt-0 md:mt-20 xl:mt-0;
     }
 
+    @media (max-width: 1024px) {
+        .slider-wrapper {
+            width: max-content;
+            display: flex;
+        }
+    }
+
     .flavors {
         @apply h-full w-full flex md:flex-row flex-col items-center 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap;
+    }
+
+    @media (max-width: 1024px) {
+        .flavors {
+            width: max-content;
+            padding-right: 1rem;
+        }
     }
 
     .flavors h1 {
@@ -436,3 +451,43 @@ radial-gradient(at 100% 45%, hsla(204,100%,85%,1) 0px, transparent 50%);
         filter: blur(2px) brightness(0.6);
     }
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Improve touch targets */
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Prevent text selection on double-tap */
+    .no-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Smooth scrolling for mobile */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better font rendering on mobile */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar for mobile webkit browsers */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+

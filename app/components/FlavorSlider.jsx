@@ -13,9 +13,10 @@ const FlavorSlider = () => {
   });
 
   useGSAP(() => {
-    const scrollAmount = sliderRef.current.scrollWidth - window.innerWidth;
-
+    // Only apply horizontal scroll animation on desktop
     if (!isTablet) {
+      const scrollAmount = sliderRef.current.scrollWidth - window.innerWidth;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".message-section",
@@ -33,38 +34,38 @@ const FlavorSlider = () => {
         x: `-${scrollAmount + 100}px`,
         ease: "power1.inOut",
       });
+
+      const titleTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".message-section",
+          start: "top top",
+          end: "bottom 80%",
+          scrub: true,
+        },
+      });
+
+      titleTl
+        .to(".first-text-split", {
+          xPercent: -30,
+          ease: "power1.inOut",
+        })
+        .to(
+          ".flavor-text-scroll",
+          {
+            xPercent: -22,
+            ease: "power1.inOut",
+          },
+          "<"
+        )
+        .to(
+          ".second-text-split",
+          {
+            xPercent: -10,
+            ease: "power1.inOut",
+          },
+          "<"
+        );
     }
-
-    const titleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".message-section",
-        start: "top top",
-        end: "bottom 80%",
-        scrub: true,
-      },
-    });
-
-    titleTl
-      .to(".first-text-split", {
-        xPercent: -30,
-        ease: "power1.inOut",
-      })
-      .to(
-        ".flavor-text-scroll",
-        {
-          xPercent: -22,
-          ease: "power1.inOut",
-        },
-        "<"
-      )
-      .to(
-        ".second-text-split",
-        {
-          xPercent: -10,
-          ease: "power1.inOut",
-        },
-        "<"
-      );
   });
 
   return (
@@ -73,18 +74,16 @@ const FlavorSlider = () => {
         {flavorlists.map((flavor) => (
           <div
             key={flavor.name}
-            className={`relative lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none overflow-hidden ${flavor.rotation || ''}`}
+            className={`relative w-[280px] sm:w-[340px] md:w-[420px] lg:w-[50vw] h-64 sm:h-72 md:h-80 lg:h-[70vh] flex-none overflow-hidden ${flavor.rotation || ''}`}
           >
             <img
-              // src={`/images/${flavor.color}-bg.svg`}
               src={`/images/Events/image_${flavor.num}.png`}
               alt=""
-              className="absolute inset-0 w-full h-full object-contain object-bottom z-0   rounded-3xl"
+              className="absolute inset-0 w-full h-full object-contain object-bottom z-0 rounded-2xl sm:rounded-3xl"
             />
 
-
             
-            <h1 className="absolute md:bottom-10 md:left-10 bottom-5 left-5 text-[#F5F5DC] md:text-6xl text-3xl font-semibold uppercase tracking-tighter z-30">
+            <h1 className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 md:bottom-10 md:left-10 text-[#F5F5DC] text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold uppercase tracking-tighter z-30">
               {flavor.name}
             </h1>
           </div>

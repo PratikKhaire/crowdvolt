@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 const Message = () => {
   return (
     <>
-      <section className='message-section'>
+      <section className='message-section overflow-hidden'>
         {/* Centered Heading with Continuous Scroll Animation */}
-        <div className='flex items-center justify-center pt-16 overflow-hidden'>
+        <div className='flex items-center justify-center pt-8 sm:pt-12 md:pt-16 overflow-hidden px-4'>
           <motion.h1 
-            className='text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#6f0080] text-transparent bg-clip-text text-center whitespace-nowrap'
+            className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#6f0080] text-transparent bg-clip-text text-center whitespace-nowrap'
             animate={{
               x: [0, -100, 0],
             }}
@@ -26,11 +26,8 @@ const Message = () => {
         </div>
 
         {/* Slider Section */}
-        <div className='h-full flex lg:flex-row flex-col items-center relative'>
-            {/* <div className='lg:w-[57%] flex-none h-80 lg:h-full md:mt-20 xl:mt-0'>
-              {/* <FlavorTitle/> */}
-            {/* </div> */} 
-            <div className="h-full pl-20 ">
+        <div className='h-full flex lg:flex-row flex-col items-center relative overflow-hidden'>
+            <div className="h-full w-full lg:overflow-visible overflow-x-auto lg:pl-20 pl-4 scrollbar-hide">
               <FlavorSlider/>
             </div>
         </div>
