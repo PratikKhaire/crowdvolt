@@ -30,8 +30,8 @@ const Page = () => {
           <Header/>
           <Hero/>
         </div>  
-        <Message/>
         <EventBrowse />
+        <Message/>
         <ArtistsSection />
       </div>
      </div>
