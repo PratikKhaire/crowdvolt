@@ -254,6 +254,79 @@ radial-gradient(at 100% 45%, hsla(204,100%,85%,1) 0px, transparent 50%);
         animation: shimmer 2s infinite;
     }
 
+    /* Footer Styles */
+    .footer-orb-purple {
+        @apply absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] animate-pulse;
+    }
+
+    .footer-orb-blue {
+        @apply absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse delay-1000;
+    }
+
+    .footer-orb-pink {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-[150px];
+    }
+
+    .footer-brand-gradient {
+        @apply text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-transparent bg-clip-text;
+    }
+
+    .footer-shimmer-effect {
+        @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full transform;
+    }
+
+    .footer-newsletter-input {
+        @apply relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/60 p-1 group hover:bg-white/50 transition-all duration-300;
+    }
+
+    .footer-newsletter-button {
+        @apply absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold text-sm hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/50;
+    }
+
+    .footer-section-title {
+        @apply text-lg font-bold mb-4 bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text;
+    }
+
+    .footer-link {
+        @apply text-gray-700 hover:text-purple-600 transition-colors duration-300 text-sm inline-flex items-center group;
+    }
+
+    .footer-link-text {
+        @apply group-hover:translate-x-1 transition-transform duration-300;
+    }
+
+    .footer-divider {
+        @apply h-px w-full bg-gradient-to-r from-transparent via-purple-400 to-transparent;
+    }
+
+    .footer-social-icon-container {
+        @apply relative w-12 h-12 rounded-xl bg-white/40 backdrop-blur-sm border border-white/60 flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:bg-white/60 hover:shadow-lg hover:shadow-purple-500/30;
+    }
+
+    .footer-social-gradient {
+        @apply absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300;
+    }
+
+    .footer-social-icon {
+        @apply relative w-6 h-6 fill-gray-600 group-hover:fill-black transition-all duration-300;
+    }
+
+    .footer-social-shimmer {
+        @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full transform;
+    }
+
+    .footer-trust-badge {
+        @apply flex items-center gap-2 px-4 py-2 bg-white/30 backdrop-blur-sm rounded-lg border border-white/40;
+    }
+
+    .footer-trust-badge-text {
+        @apply text-xs font-medium text-gray-700;
+    }
+
+    .footer-wave {
+        @apply absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600;
+    }
+
     /* 3D Cover Flow Styles */
     .coverflow-cards-container {
         background: transparent !important;

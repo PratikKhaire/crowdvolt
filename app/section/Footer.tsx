@@ -43,9 +43,9 @@ const Footer = () => {
     <footer className="relative overflow-hidden bg-light pt-20 pb-8">
       {/* Animated Background Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 rounded-full blur-[150px]"></div>
+        <div className="footer-orb-purple"></div>
+        <div className="footer-orb-blue"></div>
+        <div className="footer-orb-pink"></div>
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32">
@@ -55,11 +55,11 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6 group">
               <div className="relative">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-transparent bg-clip-text">
+                <h2 className="footer-brand-gradient">
                   CrowdVolt
                 </h2>
                 {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full transform"></div>
+                <div className="footer-shimmer-effect"></div>
               </div>
             </Link>
             
@@ -69,13 +69,13 @@ const Footer = () => {
 
             {/* Newsletter Signup */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/60 p-1 group hover:bg-white/50 transition-all duration-300">
+              <div className="footer-newsletter-input">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   className="w-full px-4 py-3 bg-transparent text-black placeholder:text-gray-500 outline-none text-sm"
                 />
-                <button className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold text-sm hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/50">
+                <button className="footer-newsletter-button">
                   Subscribe
                 </button>
               </div>
@@ -85,17 +85,14 @@ const Footer = () => {
 
           {/* Links Sections - Each takes 1 column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            <h3 className="footer-section-title">
               Company
             </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-700 hover:text-purple-600 transition-colors duration-300 text-sm inline-flex items-center group"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  <Link href={link.href} className="footer-link">
+                    <span className="footer-link-text">
                       {link.name}
                     </span>
                   </Link>
@@ -105,17 +102,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4 bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            <h3 className="footer-section-title">
               Support
             </h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-700 hover:text-purple-600 transition-colors duration-300 text-sm inline-flex items-center group"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  <Link href={link.href} className="footer-link">
+                    <span className="footer-link-text">
                       {link.name}
                     </span>
                   </Link>
@@ -125,17 +119,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4 bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            <h3 className="footer-section-title">
               Legal
             </h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-700 hover:text-purple-600 transition-colors duration-300 text-sm inline-flex items-center group"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  <Link href={link.href} className="footer-link">
+                    <span className="footer-link-text">
                       {link.name}
                     </span>
                   </Link>
@@ -145,17 +136,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4 bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text">
+            <h3 className="footer-section-title">
               Explore
             </h3>
             <ul className="space-y-3">
               {footerLinks.explore.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-700 hover:text-purple-600 transition-colors duration-300 text-sm inline-flex items-center group"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  <Link href={link.href} className="footer-link">
+                    <span className="footer-link-text">
                       {link.name}
                     </span>
                   </Link>
@@ -167,11 +155,8 @@ const Footer = () => {
 
         {/* Divider with Gradient */}
         <div className="relative mb-12">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
-          </div>
           <div className="relative flex justify-center">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+            <div className="footer-divider"></div>
           </div>
         </div>
 
@@ -186,12 +171,12 @@ const Footer = () => {
                 className="group relative"
                 aria-label={social.name}
               >
-                <div className="relative w-12 h-12 rounded-xl bg-white/40 backdrop-blur-sm border border-white/60 flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:bg-white/60 hover:shadow-lg hover:shadow-purple-500/30">
+                <div className="footer-social-icon-container">
                   {/* Animated gradient background on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${social.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                  <div className={`footer-social-gradient bg-gradient-to-br ${social.gradient}`}></div>
                   
                   <svg
-                    className="relative w-6 h-6 fill-gray-600 group-hover:fill-black transition-all duration-300"
+                    className="footer-social-icon"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -199,7 +184,7 @@ const Footer = () => {
                   </svg>
 
                   {/* Shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full transform"></div>
+                  <div className="footer-social-shimmer"></div>
                 </div>
               </Link>
             ))}
@@ -220,7 +205,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600"></div>
+      <div className="footer-wave"></div>
     </footer>
   );
 };
