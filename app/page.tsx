@@ -7,9 +7,9 @@ import Message from './section/Message'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all'
-import { EventsExplorer } from './section/EventsExplorer'
 import ArtistsSection from './section/ArtistsSection'
 import EventBrowse from './section/EventBrowse'
+import Footer from './section/Footer'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -33,6 +33,7 @@ const Page = () => {
         <EventBrowse />
         <Message/>
         <ArtistsSection />
+        <Footer/>
       </div>
      </div>
     </>

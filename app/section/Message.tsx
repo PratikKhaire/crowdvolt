@@ -11,7 +11,7 @@ const Message = () => {
         {/* Centered Heading with Continuous Scroll Animation */}
         <div className='flex items-center justify-center pt-8 sm:pt-12 md:pt-16 overflow-hidden px-4'>
           <motion.h1 
-            className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#6f0080] text-transparent bg-clip-text text-center whitespace-nowrap'
+            className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight  bg-gradient-to-b from-black to-[#6f0080] text-transparent bg-clip-text text-center whitespace-nowrap   leading-2'
             animate={{
               x: [0, -100, 0],
             }}
